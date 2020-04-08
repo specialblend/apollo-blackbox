@@ -1,6 +1,6 @@
 {
   "name": "@specialblend/apollo-blackbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Apollo Providers with loading, error and data states",
   "author": "specialblend",
   "license": "MIT",
