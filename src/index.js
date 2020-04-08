@@ -26,11 +26,10 @@ const createErrorLink = ({
         o.complete();
     }));
 
-const createDataLink = typeDefs => {
+const createDataLink = ({ typeDefs }) => {
     const schema = makeExecutableSchema({ typeDefs });
     addMockFunctionsToSchema({ schema });
-    const link = new SchemaLink({ schema });
-    return link;
+    return new SchemaLink({ schema });
 };
 
 const createLoadingClient = ({
