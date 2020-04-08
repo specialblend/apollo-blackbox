@@ -13,16 +13,42 @@ npm install --save @specialblend/apollo-blackbox
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
+import MyComponent from './MyComponent'
+import typeDefs from './typeDefs'
 
-import MyComponent from '@specialblend/apollo-blackbox'
-import '@specialblend/apollo-blackbox/dist/index.css'
+import { ApolloBlackbox } from '@specialblend/apollo-blackbox'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+// simulates query is loading forever
+function LoadingExample () {
+    return (
+        <ApolloBlackbox loading>
+            <MyComponent />
+        </ApolloBlackbox>
+    )
 }
+
+// simulates query returned an error
+function ErrorExample () {
+
+    const error = new Error('oops. something bad happened.')
+
+    return (
+        <ApolloBlackbox error={error}>
+            <MyComponent />
+        </ApolloBlackbox>
+    )
+}
+
+// simulates mock API from typeDefs
+function DataExample () {
+    return (
+        <ApolloBlackbox typeDefs={typeDefs}>
+            <MyComponent />
+        </ApolloBlackbox>
+    )
+}
+
 ```
 
 ## License
