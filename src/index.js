@@ -102,7 +102,7 @@ export function ApolloBlackbox({ typeDefs, loading, error, children }) {
     }
     if (error) {
         return (
-            <ApolloBlackboxError>
+            <ApolloBlackboxError error={error}>
                 {children}
             </ApolloBlackboxError>
         );
