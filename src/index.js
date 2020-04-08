@@ -53,7 +53,7 @@ const createDataClient = ({
 
 export function ApolloBlackboxLoading({ children }) {
     return (
-        <ApolloProvider client={createLoadingClient()}>
+        <ApolloProvider client={createLoadingClient({})}>
             {children}
         </ApolloProvider>
     );
